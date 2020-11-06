@@ -48,5 +48,8 @@
     flex: 1;
     background: white;
     overflow-y: scroll;
+    &::-webkit-scrollbar{
+      display:none;
+    }
   }
 }

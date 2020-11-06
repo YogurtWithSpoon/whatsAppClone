@@ -2,9 +2,6 @@
   margin: 0;
 }
 
-html::-webkit-scrollbar {
-  display: none;
-}
 
 body {
   margin: 0;
