@@ -1,0 +1,59 @@
+.chat{
+  flex: 0.65;
+  display: flex;
+  flex-direction: column;
+  &__header{
+    display:flex;
+    padding: 20px;
+    align-items: center;
+    border-bottom: 1px solid lightgrey;
+    &Right{
+      display: flex;
+      justify-content: space-between;
+      min-width: 100px;
+    }
+    &Info{
+      flex: 1;
+      padding-left: 20px;
+      &>h3{
+        margin-bottom: 3px;
+        font-weight: 500;
+      }
+      &>p{
+        color: grey;
+      }
+    }
+  }
+  &__body{
+    flex: 1;
+    background-image: url('https://res.cloudinary.com/traveltripperweb/image/upload/c_fit,h_1200,w_1200/v1569833900/ypzxn881j4t4oxkdxy2j.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow-y: scroll;
+    padding: 30px;
+  }
+  &__message{
+    margin-bottom: 1em;
+    position: relative;
+    font-size: 1em;
+    padding: 0.625em;
+    border-radius: 0.625em;
+    width: fit-content;
+    background-color: #fff;
+  }
+  &__name{
+    position: absolute;
+    top: -1.7em;
+    font-weight: 800;
+    font-size: xx-small;
+  }
+  &__timestamp{
+    margin-left: 0.625em;
+    font-size: xx-small;
+  }
+  &__reciver{
+    margin-left: auto;
+    background-color: lightgreen;
+  }
+}
