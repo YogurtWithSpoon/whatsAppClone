@@ -32,6 +32,9 @@
     background-size: cover;
     overflow-y: scroll;
     padding: 30px;
+    &::-webkit-scrollbar{
+      display:none;
+    }
   }
   &__message{
     margin-bottom: 1em;
@@ -54,6 +57,30 @@
   }
   &__reciver{
     margin-left: auto;
-    background-color: lightgreen;
+    background-color: rgb(173, 252, 173);
+  }
+  &__footer{
+    display:flex;
+    justify-content: space-between;
+    height: 62px;
+    align-items: center;
+    border-top:1px solid lightgrey;
+    & > .MuiSvgIcon-root{
+      padding: 0.625em;
+      color: grey;
+    }
+    &>form{
+      display: flex;
+      flex: 1;
+      &>input {
+        flex:1;
+        border-radius: 2em;
+        padding: 0.625em;
+        border:none;
+      }
+      &>button{
+        display: none;
+      }
+    }
   }
 }
