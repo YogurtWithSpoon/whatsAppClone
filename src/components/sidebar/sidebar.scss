@@ -47,5 +47,6 @@
   &__chats{
     flex: 1;
     background: white;
+    overflow-y: scroll;
   }
 }
