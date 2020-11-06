@@ -1,0 +1,51 @@
+.sidebar{
+  display: flex;
+  flex:0.35;
+  flex-direction: column;
+  &__header{
+    display:flex;
+    justify-content: space-between;
+    padding: 20px;
+    border: 1px solid lightgray;
+    &_right{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-width: 10vw;
+      & > .MuiSvgIcon-root{
+        font-size: 1.5em !important;
+        margin-right: 2vw;
+      }
+    }
+  }
+  &__search{
+    display: flex;
+    align-items: center;
+    background: #e9e7e7;
+    height: 39px;
+    padding: 10px;
+    &__container{
+      display:flex;
+      align-items: center;
+      background-color: #fff;
+      width: 100%;
+      height: 35px;
+      border-radius: 20px;
+      &>.MuiSvgIcon-root{
+        color:grey;
+        padding: 10px;
+      }
+      &>input{
+        border:none;
+        margin-left: 10px;
+        &:focus{
+          outline: none;
+        }
+      }
+    }
+  }
+  &__chats{
+    flex: 1;
+    background: white;
+  }
+}
