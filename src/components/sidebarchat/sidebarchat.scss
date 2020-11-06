@@ -3,4 +3,14 @@
   padding: 20px;
   cursor:pointer;
   border-bottom: 1px solid #ececec;
+  &:hover{
+    background-color: #ebebeb;
+  }
+  &__info{
+    margin-left: 15px;
+    &>h2{
+      font-size: 1em;
+      margin-bottom: .5em;
+    }
+  }
 }
