@@ -10,12 +10,16 @@ import SearchIcon from "@material-ui/icons/Search";
 
 //components
 import SideBarChat from "../sidebarchat/sidebarchat";
+//react data-layer
+import {useStateValue} from '../../datalayer/stateprovider';
 
 //firebase
 import db from "../../firebase/api";
 
 function Sidebar() {
   const [rooms, setRooms] = useState([]);
+  const [{avatarURL},dispatch] = useStateValue();
+
   useEffect(() => {
     const unsubscribe = db.collection("rooms").onSnapshot((snapshot) => {
       return setRooms(
@@ -35,7 +39,7 @@ function Sidebar() {
   return (
     <div className="sidebar">
       <div className="sidebar__header">
-        <Avatar />
+        <Avatar src={avatarURL}/>
         <div className="sidebar__header_right">
           <IconButton>
             <DonutLargeIcon />
