@@ -1,0 +1,17 @@
+.emojitable{
+  width: 15vw;
+  color: #fff;
+  display:grid;
+  background-color:#fff;
+  grid-template-columns: repeat(5,1fr);
+  height:100%;
+  &__item{
+    display: grid;
+    place-items: center;
+    padding:5px;
+    &:hover{
+      cursor: pointer;
+      background: lightgray;
+    }
+  }
+}
