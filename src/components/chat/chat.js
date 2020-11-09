@@ -8,6 +8,7 @@ import AttachFileOutlinedIcon from "@material-ui/icons/AttachFileOutlined";
 import MoreVertOutlinedIcon from "@material-ui/icons/MoreVertOutlined";
 import MicNoneOutlinedIcon from "@material-ui/icons/MicNoneOutlined";
 import InsertEmoticonOutlinedIcon from "@material-ui/icons/InsertEmoticonOutlined";
+import EmojiTable from "../emojitable/emojitable";
 import {useStateValue} from '../../datalayer/stateprovider';
 import firebase from 'firebase';
 
@@ -15,6 +16,7 @@ function Chat() {
   const [seed, setSeed] = useState("");
   const [message, setMessage] = useState("");
   const [roomName, setRoomName] = useState("");
+  const [shownEmoji,setShownEmoji] = useState(false);
   const [roomMessages, setRoomMessages] = useState([]);
   const [{userName,userID}, dispatch ] = useStateValue();
 
@@ -22,6 +24,10 @@ function Chat() {
     return `${date.getDate()}/${date.getMonth()+1}/${date.getFullYear()}
       ${date.getHours()}:${date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes()}
     `
+  }
+
+  function emojiDialog(e){
+    setShownEmoji(!shownEmoji);
   }
 
   const {roomId} = useParams();
@@ -46,7 +52,6 @@ function Chat() {
 
   const sendMessage = (e) => {
     e.preventDefault();
-    console.log("You tapped ", message);
     db.collection('rooms').doc(roomId).collection('messages').add({
       name: userName,
       message: message,
@@ -88,7 +93,8 @@ function Chat() {
         ))}
       </div>
       <div className="chat__footer">
-        <IconButton>
+        {shownEmoji && <EmojiTable message={{message,setMessage}}/>}
+        <IconButton onClick={emojiDialog}>
           <InsertEmoticonOutlinedIcon />
         </IconButton>
         {/* use form for enter button function */}
